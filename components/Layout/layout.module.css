@@ -1,0 +1,28 @@
+.wrapper {
+  background-color: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+  padding: 2rem 4rem;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+}
+
+.sidebar {
+  margin-right: 1rem;
+  width: 400px;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.title {
+  color: var(--purple);
+  margin-bottom: 0.5em;
+}

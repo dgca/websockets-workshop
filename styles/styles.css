@@ -1,0 +1,18 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+:root {
+  --black: #333333;
+  --white: #FDFFFC;
+  --purple: rgb(175, 125, 236);
+  --green: rgb(91, 201, 110);
+  font-size: 18px;
+  font-family: sans-serif;
+}

@@ -1,0 +1,8 @@
+.wrapper {
+  display: block;
+}
+
+.label {
+  font-size: 0.9em;
+  margin-bottom: 0.25em;
+}
