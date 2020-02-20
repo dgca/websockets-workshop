@@ -5,9 +5,10 @@ import Chirp from '../components/Chirp/Chirp.react';
 import MessageBox from '../components/MessageBox/MessageBox.react';
 
 /**
- * Find yourself with `ifconfig` => `en0` => `inet`
+ * If you want to be able to connect from other devices, find yourself
+ * with `ifconfig` => `en0` => `inet` and use that IP address as the host
  */
-const host = '10.233.15.121';
+const host = 'localhost';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -27,6 +28,10 @@ export default class Home extends React.Component {
 
   componentDidMount() {
     this.ws = new WebSocket(`ws://${host}:3001/feed-socket`);
+
+    this.ws.addEventListener('open', () => {
+      console.log('Connection established!');
+    })
 
     this.ws.addEventListener('message', (e) => {
       this.setState((state) => {
