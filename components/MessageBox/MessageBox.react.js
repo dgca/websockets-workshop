@@ -26,7 +26,6 @@ const MessageBox = ({onSend}) => {
         disabled={!message || !name}
         onClick={() => {
           onSend({name, message});
-          setName('');
           setMessage('');
         }}
       >

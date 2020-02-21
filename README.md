@@ -35,3 +35,9 @@ _(*or just follow along, that's cool too)_
 * We're building the server from scratch
 * Requirements
   * Node 10+
+
+---
+
+<!-- class: lead -->
+
+# Code time
