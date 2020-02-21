@@ -10,42 +10,28 @@ import MessageBox from '../components/MessageBox/MessageBox.react';
  */
 const host = 'localhost';
 
+/**
+ * @todo:
+ * 1. Fetch initial list of chirps
+ * 2. Set up WebSocket connection with the server
+ * 3. Send user-created chirp via socket connection to the server
+ * 4. Listen for new chirps on the server, and update the chrips list as they come in
+ */
+
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.ws = null;
     this.state = {
-      chirps: props.chirps
+      chirps: props?.chirps || []
     };
   }
 
-  static async getInitialProps() {
-    const chirps = await fetch(`http://${host}:3001/feed`)
-      .then((res) => res.json());
-    return {chirps};
-  }
-
-
-  componentDidMount() {
-    this.ws = new WebSocket(`ws://${host}:3001/feed-socket`);
-
-    this.ws.addEventListener('open', () => {
-      console.log('Connection established!');
-    })
-
-    this.ws.addEventListener('message', (e) => {
-      this.setState((state) => {
-        return {chirps: [JSON.parse(e.data), ...state.chirps]};
-      })
-    });
-  }
-
   handleSend = ({name, message}) => {
-    this.ws.send(JSON.stringify({name, message}));
+
   };
 
   render() {
-    global.temp = this;
     return (
       <Layout
         sidebar={(
