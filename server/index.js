@@ -17,7 +17,6 @@ const clientCallbacks = new Set();
 const emitter = new EventEmitter();
 const chirpEvent = 'chirpEvent';
 emitter.on(chirpEvent, (chirp) => {
-  console.log(clientCallbacks.size);
   clientCallbacks.forEach((cb) => cb(JSON.stringify(chirp)));
 });
 
